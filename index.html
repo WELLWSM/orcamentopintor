@@ -1,30 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orçamento</title>
+    <title>Pintor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <main>
-    <h1>ORÇAMENTO PARA PINTURA </h1> <!--H1 É UM TITULO DENTRO DA PAGINA--> 
-    <form id="orcamentoForm"> <!--Form é um formulário, o id é um identificador da tag, a tag é tudo que esta em as duas-->
-        <div class="flex"> <!--A Div é uma divisão, separar pag por bloco, a class é uma classe para estilizar o código no CSS-->
-        <label for="metros"> Área a ser pintada
-        </label>
-        <input type="number" id="metros" required>
+    <h1>ORÇAMENTO PARA PINTURA</h1>
 
-        <label for="dias"> Dias
-        </label>
-        <input type="number" id="dias" required> 
+    <div class="div_principal">
+        <!-- Div do primeiro bloco -->
+        <div class="bloco_um">
+            <p>Área a ser pintada (m²)</p>
+            <input type="number" id="area">
+
+            <p>Prazo do trabalho (dias)</p>
+            <input type="number" id="prazo">
+
+            <p>Vale transporte (dias)</p>
+            <input type="number" id="transporte">
+
+            <p>Alimentação (dias)</p>
+            <input type="number" id="alimentacao">
+            
+           
         </div>
-        <input type="submit" value="CALCULAR ORÇAMENTO" onclick="calcular()" class="btn"> <!--ONCLICK, SIGNIFICA QUE TERA UM CLICK NO BOTÃO NA PAGINA E VAI EXECUTAR UM CÓDIGO-->
-    </form>
- 
-    <h1>Valor de Orçamento</h1>
-    <div id="resultado"></div>
-   </main>
-   <script src="script.js"></script>
+        
+
+        <!-- Div do segundo bloco -->
+        <div class="bloco_2">
+            <!-- Tipo de trabalho -->
+            <h2>Tipo de trabalho</h2>
+            <input type="checkbox" id="parede"><label for="parede">Parede</label>
+            <input type="checkbox" id="teto"><label for="teto">Teto</label>
+            <input type="checkbox" id="portao"><label for="portao">Portão</label>
+            <!-- Tipo de trabalho -->
+
+            <!-- Qualidade do material -->
+            <h2>Qualidade do material</h2>
+            <input type="checkbox" id="basico"><label for="basico">Básico</label>
+            <input type="checkbox" id="medio"><label for="medio">Médio</label>
+            <input type="checkbox" id="premium"><label for="premium">Premium</label>
+            <!-- Qualidade do material -->
+
+            <!-- Ajudante de pintura -->
+            <h2>Ajudante de pintura</h2>
+            <input type="checkbox" id="ajudante_sim"><label for="ajudante_sim">Sim</label>
+            <input type="checkbox" id="ajudante_nao"><label for="ajudante_nao">Não</label>
+            <!-- Ajudante de pintura -->
+            
+            <div>
+<h1>TOTAL DOS VALORES</h1>
+                <div id="resultado"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão para calcular -->
+    <div>
+        <button id="calcularButton">Calcular</button>
+    </div>
+    <!-- Carregar o arquivo dados.js -->
+    <script src="dados.js"></script>
+    
+    <script src="script.js"></script>
+
 </body>
 </html>

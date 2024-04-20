@@ -1,14 +1,42 @@
-function calcular() {
-    document.getElementById("orcamentoForm").addEventListener("submit", function(event){
-        event.preventDefault(); /* EVENT.PREVENTDEFAULT, adicionar evento de click ao botao para executar o código */
+// Função para calcular o valor da pintura
+function calcularValorPintura() {
+    // Obter os valores dos inputs
+    let area = parseFloat(document.getElementById('area').value);
+    let prazo = parseInt(document.getElementById('prazo').value);
+    let transporte = parseInt(document.getElementById('transporte').value);
+    let alimentacao = parseInt(document.getElementById('alimentacao').value);
 
-        const metros = parseFloat(document.getElementById("metros").value); /* paserfloat é um número com ponto flutuante, exemplo: 1,5 ou 2.0 - GetElementByld é para selecionar um identificador dentro do código - CONST METROS é uma variavel - VALUE é para identificar um valor */
-        const dias = parseFloat(document.getElementById("dias").value);
+    // Calcular o valor base da pintura
+    let valorBase = area * window.valores.area + prazo * window.valores.prazo + transporte * window.valores.transporte + alimentacao * window.valores.alimentacao;
 
-        const metros2 = 85;
+    // Verificar o tipo de trabalho selecionado e adicionar ao valor base
+    if (document.getElementById('parede').checked) {
+        valorBase += window.valores.valorParede; //Busca o valor 100 da base dados
+    }
+    if (document.getElementById('teto').checked) {
+        valorBase += window.valores.valorTeto; //Busca o valor 150 da base dados
+    }
+    if (document.getElementById('portao').checked) {
+        valorBase += window.valores.valorPortao;
+    }
 
-        const custoTotal = metros2 * metros; /* CONST, é a variavel que calcula os metros vs os dias */
+    // Verificar a qualidade do material selecionada e ajustar o valor base
+    if (document.getElementById('medio').checked) {
+        valorBase *= window.valores.multiplicadorMedio; //Valor da qualidade do material Medio 1.2
+    } 
 
-        document.getElementById("resultado").innerText = `R$ ${custoTotal.toFixed(2)}`; /* INNERTEXT, significa que vai adicionar um texto, dentro do id resultado - CUSTOTOTAL é a variavel de calculo - TOFIXED, são as quantidades de casa decimal no resultado da pesquisa na pagina */
-    })
+    if (document.getElementById('premium').checked) {
+        valorBase *= window.valores.multiplicadorPremium; //Valor da qualidade do material Premium 1.5
+    }
+
+    // Verificar se há ajudante de pintura e adicionar ao valor base
+    if (document.getElementById('ajudante_sim').checked) {
+        valorBase += window.valores.valorAjudante; // Ajudante da base de dados 200
+    }
+
+    // Exibir o resultado na div de resultado
+    document.getElementById('resultado').innerHTML = " R$" + valorBase.toFixed(2);
 }
+
+// Adicionar evento de clique ao botão de calcular
+document.getElementById('calcularButton').addEventListener('click', calcularValorPintura); 

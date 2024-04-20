@@ -22,11 +22,11 @@ function calcularValorPintura() {
 
     // Verificar a qualidade do material selecionada e ajustar o valor base
     if (document.getElementById('medio').checked) {
-        valorBase *= window.valores.multiplicadorMedio; //Valor da qualidade do material Medio 1.2
+        valorBase += window.valores.multiplicadorMedio; //Valor da qualidade do material Medio 1.2
     } 
 
     if (document.getElementById('premium').checked) {
-        valorBase *= window.valores.multiplicadorPremium; //Valor da qualidade do material Premium 1.5
+        valorBase += window.valores.multiplicadorPremium; //Valor da qualidade do material Premium 1.5
     }
 
     // Verificar se há ajudante de pintura e adicionar ao valor base

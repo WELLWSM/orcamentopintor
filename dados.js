@@ -1,15 +1,15 @@
 // Base de dados pintor com valores
 
 window.valores = {
-    area: 10,
-    prazo: 50,
-    transporte: 20,
-    alimentacao: 15,
-    valorParede: 100,
-    valorTeto: 150,
-    valorPortao: 200,
-    multiplicadorbasico: 2,
-    multiplicadorMedio: 1.2,
-    multiplicadorPremium: 1.5,
-    valorAjudante: 200,
+    area: 17.98,
+    prazo: 192.46,
+    transporte: 10,
+    alimentacao: 32,
+    valorParede: 8.48,
+    valorTeto: 10.15,
+    valorPortao: 378.00,
+    multiplicadorBasico: 23.11,
+    multiplicadorMedio: 30.13,
+    multiplicadorPremium: 32.29,
+    valorAjudante: 93.31,
 };

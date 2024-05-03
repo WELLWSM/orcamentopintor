@@ -1,4 +1,4 @@
-body { background-image: url('/Pintura.jpg');
+body { background-image: url('./Pintura.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -11,7 +11,7 @@ body { background-image: url('/Pintura.jpg');
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url('/Pintura.jpg');
+    background-image: url('./Pintura.jpg');
     background-size: cover;
     background-position: center;
     filter: blur(7px);

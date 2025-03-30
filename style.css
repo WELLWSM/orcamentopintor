@@ -26,6 +26,7 @@ body { background-image: url('./Pintura.jpg');
     display: flex;
     justify-content: space-around;
     margin: auto;
+    color:black
 }
 
 .bloco_um {

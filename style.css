@@ -4,6 +4,7 @@ body { background-image: url('./Pintura.jpg');
     text-align: center;
     margin-top: 100px;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 .blur{
     position: fixed;
@@ -25,6 +26,7 @@ body { background-image: url('./Pintura.jpg');
     display: flex;
     justify-content: space-around;
     margin: auto;
+    color: black;
 }
 
 .bloco_um {

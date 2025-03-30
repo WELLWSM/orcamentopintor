@@ -39,4 +39,32 @@ function calcularValorPintura() {
 }
 
 // Adicionar evento de clique ao botão de calcular
-document.getElementById('calcularButton').addEventListener('click', calcularValorPintura); 
+document.getElementById('calcularButton').addEventListener('click', calcularValorPintura);
+
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("BaixarPDF").addEventListener("click", gerarPDF);
+});
+
+function gerarPDF(){
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Obter os valores dos inputs
+    let area = document.getElementById('area').value;
+    let prazo = document.getElementById('prazo').value;
+    let transporte = document.getElementById('transporte').value;
+    let alimentacao = document.getElementById('alimentacao').value;
+    let resultado = document.getElementById('resultado').innerText;
+
+    doc.setFont("helvetica", "bold");
+    doc.text("Orçamento de Pintura", 10, 10);
+    doc.setFont("helvetica", "normal");
+
+    doc.text(`Área: ${area} m²`, 10, 20);
+    doc.text(`Prazo: ${prazo} dias`, 10, 30);
+    doc.text(`Transporte: R$ ${transporte}`, 10, 40);
+    doc.text(`Alimentação: R$ ${alimentacao}`, 10, 50);
+    doc.text(`Total: ${resultado}`, 10, 60);
+
+    doc.save("orcamento-pintura.pdf");
+}

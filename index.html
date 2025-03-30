@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pintor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="blur"></div>
     <h1 class="word">ORÇAMENTO DESCOMPLICADO</h1>
 
-    <div class="div_principal word">
+    <div class="div_principal">
         <!-- Div do primeiro bloco -->
         <div class="bloco_um">
             <p class="word">Área a ser pintada (m²)</p>
             <input type="number" id="area">
 
-            <p>Prazo do trabalho (dias)</p>
+            <p class="word">Prazo do trabalho (dias)</p>
             <input type="number" id="prazo">
 
-            <p>Vale transporte (dias)</p>
+            <p class="word">Vale transporte (dias)</p>
             <input type="number" id="transporte">
 
-            <p>Alimentação (dias)</p>
+            <p class="word">Alimentação (dias)</p>
             <input type="number" id="alimentacao">
             
            
@@ -32,23 +33,23 @@
         <!-- Div do segundo bloco -->
         <div class="bloco_2">
             <!-- Tipo de trabalho -->
-            <h2>Tipo de trabalho</h2>
-            <input type="checkbox" id="parede"><label for="parede">Parede</label>
-            <input type="checkbox" id="teto"><label for="teto">Teto</label>
-            <input type="checkbox" id="portao"><label for="portao">Portão</label>
+            <h2 class="word">Tipo de trabalho</h2>
+            <input type="checkbox" id="parede"><label class="word" for="parede">Parede</label>
+            <input type="checkbox" id="teto"><label class="word" for="teto">Teto</label>
+            <input type="checkbox" id="portao"><label class="word" for="portao">Portão</label>
             <!-- Tipo de trabalho -->
 
             <!-- Qualidade do material -->
-            <h2>Qualidade do material</h2>
-            <input type="checkbox" id="basico"><label for="basico">Econômico</label>
-            <input type="checkbox" id="medio"><label for="medio">Standart</label>
-            <input type="checkbox" id="premium"><label for="premium">Premium</label>
+            <h2 class="word">Qualidade do material</h2>
+            <input type="checkbox" id="basico"><label class="word" for="basico">Econômico</label>
+            <input type="checkbox" id="medio"><label class="word" for="medio">Standart</label>
+            <input type="checkbox" id="premium"><label class="word" for="premium">Premium</label>
             <!-- Qualidade do material -->
 
             <!-- Ajudante de pintura -->
-            <h2>Ajudante de pintura</h2>
-            <input type="checkbox" id="ajudante_sim"><label for="ajudante_sim">Sim</label>
-            <input type="checkbox" id="ajudante_nao"><label for="ajudante_nao">Não</label>
+            <h2 class="word">Ajudante de pintura</h2>
+            <input type="checkbox" id="ajudante_sim"><label class="word" for="ajudante_sim">Sim</label>
+            <input type="checkbox" id="ajudante_nao"><label class="word" for="ajudante_nao">Não</label>
             <!-- Ajudante de pintura -->
             
             <div>
@@ -60,7 +61,8 @@
 
     <!-- Botão para calcular -->
     <div>
-        <button id="calcularButton">Calcular</button>
+        <button class="word" id="calcularButton">Calcular</button>
+        <button class="word" id="BaixarPDF">Baixar Orçamento</button>
     </div>
     <!-- Carregar o arquivo dados.js -->
     <script src="dados.js"></script>

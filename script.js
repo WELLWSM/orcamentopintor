@@ -3,11 +3,10 @@ function calcularValorPintura() {
     // Obter os valores dos inputs
     let area = parseFloat(document.getElementById('area').value);
     let prazo = parseInt(document.getElementById('prazo').value);
-    let transporte = parseInt(document.getElementById('transporte').value);
-    let alimentacao = parseInt(document.getElementById('alimentacao').value);
-
     // Calcular o valor base da pintura
-    let valorBase = area * window.valores.area + prazo * window.valores.prazo + transporte * window.valores.transporte + alimentacao * window.valores.alimentacao;
+    let valorBase = area * window.valores.area + prazo * window.valores.prazo;
+
+    valorBase += prazo * window.valores.valorPintor;
 
     // Verificar o tipo de trabalho selecionado e adicionar ao valor base
     if (document.getElementById('parede').checked) {
@@ -52,8 +51,6 @@ function gerarPDF(){
     // Obter os valores dos inputs
     let area = document.getElementById('area').value;
     let prazo = document.getElementById('prazo').value;
-    let transporte = document.getElementById('transporte').value;
-    let alimentacao = document.getElementById('alimentacao').value;
     let resultado = document.getElementById('resultado').innerText;
 
     doc.setFont("helvetica", "bold");
@@ -62,8 +59,8 @@ function gerarPDF(){
 
     doc.text(`Área: ${area} m²`, 10, 20);
     doc.text(`Prazo: ${prazo} dias`, 10, 30);
-    doc.text(`Transporte: R$ ${transporte}`, 10, 40);
-    doc.text(`Alimentação: R$ ${alimentacao}`, 10, 50);
+    doc.text(`Diaria Pintor: R$250.00`, 10, 40);
+    doc.text(`Diaria Ajudante: R$150.00`, 10, 50);
     doc.text(`Total: ${resultado}`, 10, 60);
 
     doc.save("orcamento-pintura.pdf");

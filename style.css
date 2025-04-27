@@ -19,6 +19,9 @@ body { background-image: url('./Pintura.jpg');
     z-index: -1;
 
 }
+#diaria{
+    font-weight: bold;
+}
 
 .div_principal {
     width: 550px;
@@ -43,8 +46,11 @@ label {
     color: royalblue;
 }
 
+h1 {
+    color:black;
+}
 h2 {
-    color: #2d2d49;
+    color: #050505;
 }
 
 #resultado {

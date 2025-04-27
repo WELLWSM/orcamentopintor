@@ -20,7 +20,7 @@ body { background-image: url('./Pintura.jpg');
 
 }
 #diaria{
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .div_principal {
@@ -50,7 +50,7 @@ h1 {
     color:black;
 }
 h2 {
-    color: #050505;
+    color: black
 }
 
 #resultado {
